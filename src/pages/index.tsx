@@ -1,9 +1,10 @@
 import Head from "next/head";
 import { Fragment } from "react";
-
 import { NextPageWithLayout } from "~/types/common.types";
-
 import Layout from "~/components/Layout/Layout.component";
+import Main from "~/views/Main/Main.view";
+import playlistData from '~/data/playlistData.json'
+import Container from "~/components/Container/Container.component";
 
 const Home: NextPageWithLayout = () => {
   return (
@@ -13,9 +14,9 @@ const Home: NextPageWithLayout = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div>
-        <h1>DaftAcademy - WebApp 2022 - tu coś dodaje</h1>
-      </div>
+      <Container>
+        <Main items={playlistData}/>
+      </Container>
     </Fragment>
   );
 };
